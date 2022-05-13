@@ -1,2 +1,2 @@
 # snipets
-Host reusable code snipets to accelerate development.
+reusable code snipets to accelerate development.
