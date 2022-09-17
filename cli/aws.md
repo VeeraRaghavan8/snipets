@@ -40,9 +40,9 @@ aws emr add-steps --cluster-id j-3FT7KWNMRN3KH --steps Type=CUSTOM_JAR,Name="RUN
 ```sh
 date_epoch=date -d '2021-10-19 21:59:20' +"%s%3N"
 
-aws batch list-jobs --output json --job-status FAILED --job-queue ao-algorithm-dev | jq '.jobSummaryList | .[] | select(.createdAt>=1634695160000)'
+aws batch list-jobs --output json --job-status FAILED --job-queue algorithm-dev | jq '.jobSummaryList | .[] | select(.createdAt>=1634695160000)'
 
-aws batch list-jobs --output json --job-status FAILED --job-queue ao-algorithm-dev | jq '.jobSummaryList | .[] | select(.createdAt>=1634695160000) | select(.container.exitCode!=null)'
+aws batch list-jobs --output json --job-status FAILED --job-queue algorithm-dev | jq '.jobSummaryList | .[] | select(.createdAt>=1634695160000) | select(.container.exitCode!=null)'
 
-aws batch list-jobs --output json --job-status SUCCEEDED --job-queue=ao-algorithm-dev --region us-east-1 | jq '.[] | map(select( .createdAt >= 1642564800000)) | .[].jobName'
+aws batch list-jobs --output json --job-status SUCCEEDED --job-queue=algorithm-dev --region us-east-1 | jq '.[] | map(select( .createdAt >= 1642564800000)) | .[].jobName'
 ```
