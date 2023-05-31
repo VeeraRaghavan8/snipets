@@ -6,8 +6,8 @@ Compares the two tables, column by column to generate report of mismatches.
 
 # Usage
 ```python
-key_struct = [StructField("primary_key1", LongType(), True), StructField("primary_key2", ShortType(), True)]
-report_df = tbl_cloumn_comparator(df_A, df_B, key_struct)
+report_df = tbl_cloumn_comparator(pi_df_prod_wipers, pi_df_test_wipers, ["primary_key1", "primary_key2"], examples=4, cloumns_lst=["col_a"])
+report_df.show()
 ```
 
 # Example Output
